@@ -51,3 +51,7 @@ document.querySelectorAll('.masonry figure').forEach(fig => {
 });
 box.addEventListener('click', () => box.classList.remove('open'));
 document.addEventListener('keydown', e => { if (e.key === 'Escape') box.classList.remove('open'); });
+
+// Cadangan: pastikan semua elemen (termasuk foto) selalu tampil
+if (!window.AOS) document.querySelectorAll('[data-aos]').forEach(el => el.removeAttribute('data-aos'));
+window.addEventListener('load', () => window.AOS && AOS.refresh());
